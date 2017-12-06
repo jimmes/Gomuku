@@ -167,25 +167,31 @@ void Game::Add()
 {
 	if (player == 1)
 	{
-		player = 2;
-		cout << "X";
-		locationx = position.X;
-		locationy = position.Y;
-		arrayxo[locationx/2][locationy/2] = 'X';
-		//SetPos(100, 100);
-		//cout << arrayxo[0][0];
+		if (arrayxo[position.X / 2][position.Y / 2] != 'O')
+		{
+			locationx = position.X;
+			locationy = position.Y;
+			arrayxo[locationx / 2][locationy / 2] = 'X';
+			//SetPos(100, 100);
+			//cout << arrayxo[0][0];
 			SetPos(position.X, position.Y);
+			player = 2;
+			cout << "X";
+		}
 	}
-	else 
+	else
 	{
-		player = 1;
-		cout << "O";
-		locationx = position.X;
-		locationy = position.Y;
-		arrayxo[locationx/2][locationy/2] = 'O';
-		//SetPos(100, 100);
-		//cout << arrayxo[locationx / 2][locationy / 2];
+		if (arrayxo[position.X / 2][position.Y / 2] != 'X')
+		{
+			locationx = position.X;
+			locationy = position.Y;
+			arrayxo[locationx / 2][locationy / 2] = 'O';
+			//SetPos(100, 100);
+			//cout << arrayxo[locationx / 2][locationy / 2];
 			SetPos(position.X, position.Y);
+			player = 1;
+			cout << "O";
+		}
 	}
 }
 
