@@ -140,7 +140,7 @@ void Game::gameover()
 		cout << "Player 2  Wins";
 	if (player == 2)
 		cout << "Player 1  Wins";
-	Sleep(1000);
+	Sleep(1500);
 	system("cls");
 	SetPos(36, 12);
 	cout << " Player again hit Y, no hit N";
